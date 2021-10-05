@@ -1,4 +1,5 @@
-
+ // Did a console log to know that my script js and index connect
+ console.log ('connected')
   var todayDate=moment().format('dddd,MMM Do YYYY');
   $("#currentDay").html(todayDate);
 
@@ -11,12 +12,12 @@
 })
 
 function timeTracker() {
-
+// Using moment of the hour as military time to have the hours
     var timeNow = moment().hour();
 
-
-    $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+// Pulling from textarea to grab each id of hour 
+    $("textarea").each(function () {
+        var blockTime = parseInt($(this).attr("id"));
 
 
         if (blockTime < timeNow) {
